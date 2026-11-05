@@ -21,3 +21,17 @@ Implementation: `backend/main.py`, `tests/test_sms_otp.py`
 
 Tests: `tests/test_sms_otp.py`
 
+### sms-otp-template-management — Multiple named SMS OTP templates with CRUD
+
+Status: planned
+
+Acceptance:
+- Create, read, update, delete multiple named SMS OTP templates
+- Template listing endpoint
+- Template validation per template
+- Backward compatible with default template
+
+Implementation: `backend/main.py`, `tests/test_sms_otp.py`
+
+Tests: `tests/test_sms_otp.py`
+
