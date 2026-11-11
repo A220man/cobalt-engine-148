@@ -1,41 +1,16 @@
 {
   "schema_version": 1,
-  "current_feature": "sms-otp-newlines",
+  "current_feature": "continue-implementation",
   "features": [
     {
-      "id": "sms-otp-newlines",
-      "title": "Allow newlines in SMS OTP template",
-      "status": "done",
+      "id": "continue-implementation",
+      "title": "Continue implementation and resolve known failures",
+      "status": "in_progress",
       "acceptance": [
-        "SMS OTP template accepts literal newlines or \\n escape sequences",
-        "Generated SMS contains at least one newline to conform to WebOTP API",
-        "Template validation permits newline characters"
+        "Run checks, fix failures, and implement the next planned feature"
       ],
-      "implementation": [
-        "backend/main.py",
-        "tests/test_sms_otp.py"
-      ],
-      "tests": [
-        "tests/test_sms_otp.py"
-      ]
-    },
-    {
-      "id": "sms-otp-template-management",
-      "title": "Multiple named SMS OTP templates with CRUD",
-      "status": "planned",
-      "acceptance": [
-        "Create, read, update, delete multiple named SMS OTP templates",
-        "Template listing endpoint",
-        "Template validation per template",
-        "Backward compatible with default template"
-      ],
-      "implementation": [
-        "backend/main.py",
-        "tests/test_sms_otp.py"
-      ],
-      "tests": [
-        "tests/test_sms_otp.py"
-      ]
+      "implementation": [],
+      "tests": []
     }
   ]
 }
