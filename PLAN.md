@@ -4,34 +4,14 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-sms-otp-newlines
+continue-implementation
 
 ## Roadmap
 
-### sms-otp-newlines — Allow newlines in SMS OTP template
+### continue-implementation — Continue implementation and resolve known failures
 
-Status: done
-
-Acceptance:
-- SMS OTP template accepts literal newlines or \n escape sequences
-- Generated SMS contains at least one newline to conform to WebOTP API
-- Template validation permits newline characters
-
-Implementation: `backend/main.py`, `tests/test_sms_otp.py`
-
-Tests: `tests/test_sms_otp.py`
-
-### sms-otp-template-management — Multiple named SMS OTP templates with CRUD
-
-Status: planned
+Status: in_progress
 
 Acceptance:
-- Create, read, update, delete multiple named SMS OTP templates
-- Template listing endpoint
-- Template validation per template
-- Backward compatible with default template
-
-Implementation: `backend/main.py`, `tests/test_sms_otp.py`
-
-Tests: `tests/test_sms_otp.py`
+- Run checks, fix failures, and implement the next planned feature
 
