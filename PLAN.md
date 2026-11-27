@@ -15,3 +15,7 @@ Status: in_progress
 Acceptance:
 - Run checks, fix failures, and implement the next planned feature
 
+Implementation: `backend/main.py`
+
+Tests: `tests/test_sms_otp.py`
+
