@@ -65,3 +65,22 @@ def test_multiple_newlines_accepted():
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+
+def test_template_accepts_crlf_newlines():
+    """Template should accept CRLF (\\r\\n) newlines for WebOTP compliance."""
+    template_text = "Code: {{code}}\r\n\r\nExpires soon."
+    response = client.post("/api/auth/sms/otp/template", json={"template": template_text})
+    assert response.status_code == 200
+    data = response.json()
+    assert "\r\n" in data["template"]
+    assert data["template"].count("\r\n") >= 1
+
+def test_send_otp_preserves_crlf_newlines():
+    """Sending OTP should preserve CRLF newlines in rendered message."""
+    template_text = "Verify: {{code}}\r\n\r\nExpires soon."
+    client.post("/api/auth/sms/otp/template", json={"template": template_text})
+    response = client.post("/api/auth/sms/otp/send", json={"phone": "+15551234567"})
+    assert response.status_code == 200
+    data = response.json()
+    assert data["success"] is True
+    assert "WebOTP compliant: True" in data["message"]
